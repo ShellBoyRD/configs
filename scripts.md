@@ -13,18 +13,35 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 ```
 git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 ```
-#### move configs to proper locations
+
+#### Move Configs to Proper Locations
 ```
 sudo mv fish/ ~/.config/fish/ 
 sudo mv alacritty/ ~/.config/alacritty/
 sudo mv paru.conf /etc/paru.conf
 sudo mv nanorc /etc/nanorc
 ```
+
 #### Use cachyos-pacman.conf (If on arch, this will add cachyos repos. Untested and unsupported)
 ```
 mv cachyos-pacman.conf /etc/pacman.conf
 ```
-#### Use normal pacman.conf (This will remove cachy repos and possibly break cachyos)
+
+#### Use Normal pacman.conf (This will remove cachy repos and possibly break cachyos)
 ```
 mv pacman.conf /etc/pacman.conf
+```
+
+#### Install paru
+```
+git clone https://aur.archlinux.org/paru-bin
+cd paru-bin
+makepkg -si  
+cd ..
+rm -rf paru/
+```
+
+#### Install Tdrop
+```
+paru -S tdrop --noconfirm
 ```
